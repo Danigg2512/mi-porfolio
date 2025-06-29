@@ -1,4 +1,3 @@
-// script.js
 
 // --- SELECTORES GLOBALES ---
 const body = document.body;
@@ -69,16 +68,12 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 // --- LÓGICA DE INICIALIZACIÓN AL CARGAR LA PÁGINA ---
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializa el modo oscuro basándose en la preferencia guardada o del sistema
     const savedDarkMode = localStorage.getItem('darkMode');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (savedDarkMode === 'enabled' || (savedDarkMode === null && systemPrefersDark)) {
+    if (savedDarkMode === 'enabled') {
         enableDarkMode();
     } else {
         disableDarkMode();
     }
-
-    // Por tu petición anterior, no inicializamos el idioma desde localStorage
-    // para que siempre empiece en español.
 });
