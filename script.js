@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedDarkMode = localStorage.getItem('darkMode');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (savedDarkMode === 'enabled') {
+    if (savedDarkMode === 'enabled' || (savedDarkMode === null && systemPrefersDark)) {
         enableDarkMode();
     } else {
         disableDarkMode();
