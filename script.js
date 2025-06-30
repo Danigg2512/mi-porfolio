@@ -76,4 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         disableDarkMode();
     }
+    
+    const savedLanguage = localStorage.getItem('language');
+    if (savedLanguage) {
+        setLanguage(savedLanguage);
+    }
 });
